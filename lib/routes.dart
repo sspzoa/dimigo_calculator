@@ -11,6 +11,9 @@ class RouteName {
 
 var namedRoutes = <String, WidgetBuilder>{
   RouteName.home: (context) => const HomeScreen(),
-  RouteName.input: (context) => InputScreen(),
-  RouteName.result: (context) => ResultScreen(),
+  RouteName.input: (context) => const InputScreen(),
+  RouteName.result: (context) {
+    final args = ModalRoute.of(context)!.settings.arguments as AdmissionScores;
+    return ResultScreen(scores: args);
+  },
 };
