@@ -45,6 +45,8 @@ class _InputScreenState extends State<InputScreen> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text(semester),
+          backgroundColor: Colors.white,
+          surfaceTintColor: Colors.transparent,
           content: SingleChildScrollView(
             child: ListBody(
               children: subjects

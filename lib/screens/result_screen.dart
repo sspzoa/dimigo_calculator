@@ -1,5 +1,6 @@
-import 'package:dimigo_calculator/screens/input_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:dimigo_calculator/main_theme.dart';
+import 'package:dimigo_calculator/screens/input_screen.dart';
 
 class ResultScreen extends StatelessWidget {
   const ResultScreen({super.key, required this.scores});
@@ -9,13 +10,17 @@ class ResultScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('계산 결과'),
-        ),
-        body: Center(
-          child: Padding(
+      appBar: AppBar(
+        title: const Text('계산 결과'),
+      ),
+      body: Center(
+        child: Column(children: [
+          Padding(
             padding: const EdgeInsets.all(30.0),
             child: GridView.count(
+              padding: const EdgeInsets.all(0),
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
               crossAxisCount: 2,
               childAspectRatio: 1.0,
               mainAxisSpacing: 30,
@@ -48,7 +53,13 @@ class ResultScreen extends StatelessWidget {
               ],
             ),
           ),
-        ));
+          const SizedBox(height: 50),
+          Text('1단계 경쟁 가능 예상 교과점수는', style: subTitleTextStyle(context)),
+          Text('일반전형 116점 내외, 특별전형 55점 내외입니다.',
+              style: subTitleTextStyle(context)),
+        ]),
+      ),
+    );
   }
 }
 

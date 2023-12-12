@@ -21,7 +21,7 @@ class _MainHomePageState extends State<HomeScreen> {
           children: <Widget>[
             const Spacer(),
             Text(
-              '디미고 교과점수계산기 2025',
+              '디미고 교과점수계산기',
               style: titleTextStyle(context),
             ),
             const SizedBox(height: 15),
